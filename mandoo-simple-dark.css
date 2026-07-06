@@ -1,25 +1,30 @@
 @charset "UTF-8";
+@import "night/mermaid.dark.css";
+@import "night/codeblock.dark.css";
+@import "night/sourcemode.dark.css";
+
 /*!
 Mandoo Simple
-Quiet warm-gray Typora theme.
+Quiet warm-gray Typora theme, dark variant.
  */
 
 :root {
-  --bg: #eeeeea;
-  --paper: #fbfaf6;
-  --paper-soft: #f0eee6;
-  --ink: #22272b;
-  --ink-soft: #48504b;
-  --muted: #747a73;
-  --line: #d7d0c1;
-  --line-strong: #b9afa1;
-  --accent: #6f837b;
-  --code-bg: #ece9df;
-  --code-line: #d3ccbd;
-  --sidebar-bg: #e5e1d6;
-  --sidebar-hover: #d9d3c6;
-  --sidebar-ink: #2f3538;
-  --sidebar-muted: #6f7672;
+  --bg: #171817;
+  --paper: #20211f;
+  --paper-soft: #282a26;
+  --ink: #e5e0d6;
+  --ink-soft: #c9c1b3;
+  --muted: #9c9488;
+  --line: #3a372f;
+  --line-strong: #554d40;
+  --accent: #9fb3a5;
+  --code-bg: #292b28;
+  --code-line: #403d35;
+  --sidebar-bg: #1c1d1b;
+  --sidebar-hover: #292b27;
+  --sidebar-ink: #ded8cc;
+  --sidebar-muted: #9e978d;
+  --mermaid-theme: night;
   --control-text-color: var(--muted);
   --side-bar-bg-color: var(--sidebar-bg);
   --font-ui: "Segoe UI", Helvetica, "Apple Color Emoji", Arial, "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -28,6 +33,7 @@ Quiet warm-gray Typora theme.
 
 html {
   font-size: 16px;
+  color-scheme: dark;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -52,8 +58,8 @@ body.typora-export #write {
 }
 
 ::selection {
-  color: #111;
-  background: #d9dfd7;
+  color: #101110;
+  background: #8ea08f;
 }
 
 #write {
@@ -83,12 +89,12 @@ body > :last-child {
 a {
   color: var(--accent);
   text-decoration: underline;
-  text-decoration-color: #b6c0b8;
+  text-decoration-color: #62736a;
   text-underline-offset: .18em;
 }
 
 a:hover {
-  color: #4b6259;
+  color: #c0d2c6;
   text-decoration-color: currentColor;
 }
 
@@ -100,7 +106,7 @@ h5,
 h6 {
   position: relative;
   margin: 1.8rem 0 .85rem;
-  color: #202529;
+  color: #ede7dc;
   font-weight: 650;
   letter-spacing: 0;
   line-height: 1.28;
@@ -144,18 +150,18 @@ h2 {
   margin-top: 2.25rem;
   padding-bottom: .25em;
   border-bottom: 1px solid var(--line);
-  color: #8a5a44;
+  color: #d2a07f;
   font-size: 1.6em;
 }
 
 h3 {
   margin-top: 1.9rem;
-  color: #2e3b3e;
+  color: #d3d8d2;
   font-size: 1.32em;
 }
 
 h4 {
-  color: #44504a;
+  color: #c8cec6;
   font-size: 1.14em;
 }
 
@@ -256,8 +262,8 @@ blockquote blockquote {
 
 mark {
   padding: .04em .25em;
-  color: #222;
-  background: #e5dfc8;
+  color: #191815;
+  background: #7a6746;
 }
 
 table {
@@ -288,9 +294,9 @@ table tr th {
 }
 
 table tr th {
-  color: #24282c;
+  color: #e8e1d6;
   font-weight: 650;
-  background: #e8e3d6;
+  background: #312e28;
 }
 
 table tr td:first-child,
@@ -324,14 +330,14 @@ code,
 tt {
   margin: 0 2px;
   padding: .14em .35em;
-  color: #2e3b3e;
+  color: #d9ded7;
   background: var(--code-bg);
 }
 
 .md-fences {
   margin: 1.1em 0;
   padding: 14px 16px;
-  color: #2d3337;
+  color: #d8d4cc;
   line-height: 1.62;
   background: var(--code-bg);
   border: 1px solid var(--code-line);
@@ -340,7 +346,7 @@ tt {
 
 .CodeMirror {
   background: var(--code-bg);
-  color: #2e3b3e;
+  color: #d8d4cc;
 }
 
 .CodeMirror-gutters {
@@ -374,23 +380,23 @@ tt {
 .CodeMirror-selected,
 .CodeMirror-selectedtext {
   color: inherit !important;
-  background: rgba(111, 131, 123, .22) !important;
+  background: rgba(159, 179, 165, .24) !important;
   text-shadow: none;
 }
 
 .CodeMirror-activeline-background,
 .cm-s-typora-default .CodeMirror-activeline-background {
-  background: rgba(111, 131, 123, .08);
+  background: rgba(159, 179, 165, .09);
 }
 
 .cm-s-inner .cm-keyword,
 .cm-s-typora-default .cm-property {
-  color: #8a5a44;
+  color: #d2a07f;
 }
 
 .cm-s-inner .cm-string,
 .cm-s-typora-default .cm-string {
-  color: #8b644d;
+  color: #d59b82;
 }
 
 .cm-s-inner .cm-comment,
@@ -412,20 +418,20 @@ tt {
 .cm-s-inner .cm-number,
 .cm-s-typora-default .cm-atom,
 .cm-s-typora-default .cm-number {
-  color: #6a7b68;
+  color: #a8c3a8;
 }
 
 .cm-s-inner .cm-tag {
-  color: #687f75;
+  color: #b8d0ba;
 }
 
 .cm-s-inner .cm-attribute {
-  color: #7b6386;
+  color: #b29ac0;
 }
 
 .cm-s-inner .cm-link,
 .cm-s-typora-default .cm-link {
-  color: var(--accent);
+  color: #c0d2c6;
   text-decoration: underline;
 }
 
@@ -444,7 +450,7 @@ tt {
   border: 1px solid var(--line);
   border-left: 4px solid var(--accent);
   border-radius: 6px;
-  box-shadow: 0 10px 22px rgba(36, 40, 44, .06);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .16);
 }
 
 #write .md-alert-note,
@@ -453,15 +459,15 @@ tt {
 }
 
 #write .md-alert-important {
-  border-left-color: #7b6386;
+  border-left-color: #b29ac0;
 }
 
 #write .md-alert-warning {
-  border-left-color: #9a6a3f;
+  border-left-color: #d0a06e;
 }
 
 #write .md-alert-caution {
-  border-left-color: #9b5048;
+  border-left-color: #d28b82;
 }
 
 #write .md-alert-text {
@@ -552,7 +558,7 @@ sup.md-footnote:hover {
 p > img:only-child,
 p > .md-image:only-child img {
   border-radius: 6px;
-  box-shadow: 0 10px 24px rgba(36, 40, 44, .12);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .24);
 }
 
 .wp-caption {
@@ -578,12 +584,12 @@ p > .md-image:only-child img {
 .mac-seamless-mode #typora-sidebar {
   color: var(--sidebar-ink);
   background: var(--sidebar-bg);
-  border-right: 1px solid #d1cabb;
+  border-right: 1px solid #34312a;
 }
 
 .sidebar-tabs {
-  border-bottom: 1px solid #d1cabb;
-  background: #dcd7ca;
+  border-bottom: 1px solid #34312a;
+  background: #282a25;
 }
 
 .outline-label,
