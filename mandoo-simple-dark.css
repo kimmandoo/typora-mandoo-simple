@@ -25,6 +25,12 @@ Quiet warm-gray Typora theme, dark variant.
   --sidebar-ink: #ded8cc;
   --sidebar-muted: #9e978d;
   --mermaid-theme: night;
+  --bg-color: var(--paper);
+  --text-color: var(--ink);
+  --primary-color: var(--accent);
+  --active-file-bg-color: var(--sidebar-hover);
+  --active-file-text-color: var(--sidebar-ink);
+  --item-hover-bg-color: var(--sidebar-hover);
   --control-text-color: var(--muted);
   --side-bar-bg-color: var(--sidebar-bg);
   --font-ui: "Segoe UI", Helvetica, "Apple Color Emoji", Arial, "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -47,6 +53,21 @@ body {
   background: var(--bg);
 }
 
+body.typora-export {
+  --bg: #fff;
+  --paper: #fff;
+  --paper-soft: #f7f7f7;
+  --ink: #111;
+  --ink-soft: #333;
+  --muted: #666;
+  --line: #ddd;
+  --line-strong: #bbb;
+  --accent: #4f655d;
+  --code-bg: #f6f6f6;
+  --code-line: #d8d8d8;
+  color: var(--ink);
+}
+
 body.typora-export,
 body.typora-export content,
 body.typora-export #write {
@@ -55,6 +76,23 @@ body.typora-export #write {
 
 body.typora-export #write {
   border: 0;
+}
+
+body.typora-export .md-fences,
+body.typora-export pre,
+body.typora-export code,
+body.typora-export tt,
+body.typora-export .CodeMirror {
+  color: #222;
+  background: var(--code-bg);
+  border-color: var(--code-line);
+}
+
+body.typora-export .md-fences *,
+body.typora-export pre *,
+body.typora-export code *,
+body.typora-export .CodeMirror * {
+  color: inherit;
 }
 
 ::selection {
@@ -620,12 +658,42 @@ p > .md-image:only-child img {
 }
 
 #typora-quick-open,
+#context-menu,
 .context-menu,
-.megamenu-content {
+.dropdown-menu,
+.megamenu-content,
+.modal-content,
+.popover,
+#md-notification,
+#spell-check-panel,
+#footer-word-count-info {
   color: var(--ink);
   background: var(--paper);
   border: 1px solid var(--line-strong);
   border-radius: 6px;
+}
+
+#typora-quick-open input,
+#typora-sidebar input,
+#md-searchpanel input,
+.modal-content input,
+.modal-content select,
+.modal-content textarea,
+.modal-content .input-group-addon,
+.megamenu-menu-panel input[type="text"],
+.ty-preferences input[type="search"],
+.form-control {
+  color: var(--ink);
+  background: var(--paper-soft);
+  border-color: var(--line);
+}
+
+#typora-quick-open input::placeholder,
+#typora-sidebar input::placeholder,
+#md-searchpanel input::placeholder,
+.modal-content input::placeholder,
+.form-control::placeholder {
+  color: var(--muted);
 }
 
 #typora-quick-open-item {
@@ -645,11 +713,90 @@ p > .md-image:only-child img {
   margin-top: -2px;
 }
 
+.dropdown-menu > li > a,
+.context-menu.dropdown-menu > li > a,
+.megamenu-menu-panel .dropdown-menu > li > a {
+  color: var(--ink);
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.context-menu.dropdown-menu > li > a:hover,
+.context-menu.dropdown-menu > li > a:focus,
+.megamenu-menu-panel .dropdown-menu > li > a:hover,
+.megamenu-menu-panel .dropdown-menu > li > a:focus {
+  color: var(--ink);
+  background: var(--paper-soft);
+}
+
+.dropdown-menu .divider,
+.context-menu.dropdown-menu .divider {
+  background-color: var(--line);
+}
+
+.btn,
+.btn-default {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--line);
+}
+
+.btn:hover,
+.btn:focus,
+.btn-default:hover,
+.btn-default:focus {
+  color: var(--ink);
+  background: var(--paper-soft);
+  border-color: var(--accent);
+}
+
+.btn-primary,
+.modal-content .btn-primary {
+  color: #101110;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.modal-header,
+.modal-footer,
+.popover-title {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--line);
+}
+
+.popover.bottom > .arrow::after {
+  border-bottom-color: var(--paper);
+}
+
+.popover.top > .arrow::after {
+  border-top-color: var(--paper);
+}
+
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, .58);
+}
+
+.file-library-node.active > .file-node-content,
+.file-list-item.active,
+.outline-item-active,
+.outline-item-active > .outline-label {
+  color: var(--sidebar-ink);
+  background: var(--sidebar-hover);
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+  color: var(--sidebar-ink);
+  background: var(--sidebar-hover);
+}
+
 #md-notification::before {
   top: 10px;
 }
 
 .context-menu,
+.dropdown-menu,
 .megamenu-content,
 footer,
 header,
@@ -664,6 +811,36 @@ header,
 b,
 strong {
   font-weight: 650;
+}
+
+body.typora-export #write,
+body.typora-export #write * {
+  color: #111 !important;
+}
+
+body.typora-export #write .md-fences,
+body.typora-export #write pre,
+body.typora-export #write code,
+body.typora-export #write tt,
+body.typora-export #write .CodeMirror {
+  color: #222 !important;
+  background: var(--code-bg) !important;
+  border-color: var(--code-line) !important;
+}
+
+body.typora-export #write .md-fences *,
+body.typora-export #write pre *,
+body.typora-export #write code *,
+body.typora-export #write .CodeMirror * {
+  color: inherit !important;
+}
+
+body.typora-export #write svg text,
+body.typora-export #write svg tspan,
+body.typora-export #write [lang="mermaid"] .label {
+  color: #111 !important;
+  fill: #111 !important;
+  stroke: none !important;
 }
 
 @media (max-width: 760px) {
@@ -686,6 +863,24 @@ strong {
   /* Export polish */
   @page {
     background: #fff;
+  }
+
+  :root,
+  body.typora-export {
+    --bg: #fff;
+    --paper: #fff;
+    --paper-soft: #f7f7f7;
+    --ink: #111;
+    --ink-soft: #333;
+    --muted: #666;
+    --line: #ddd;
+    --line-strong: #bbb;
+    --accent: #4f655d;
+    --code-bg: #f6f6f6;
+    --code-line: #d8d8d8;
+    --bg-color: #fff;
+    --text-color: #111;
+    --primary-color: #4f655d;
   }
 
   *,
@@ -714,6 +909,7 @@ strong {
   }
 
   #write {
+    color: var(--ink);
     min-height: auto;
     margin: 0;
     padding: 0;
@@ -722,6 +918,7 @@ strong {
 
   #write,
   #write * {
+    color: #111 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -759,8 +956,33 @@ strong {
     white-space: pre-wrap;
   }
 
+  #write .md-fences,
+  #write pre,
+  #write code,
+  #write tt,
+  #write .CodeMirror {
+    color: #222 !important;
+    background: var(--code-bg) !important;
+    border-color: var(--code-line) !important;
+  }
+
+  #write .md-fences *,
+  #write pre *,
+  #write code *,
+  #write .CodeMirror * {
+    color: inherit !important;
+  }
+
+  #write svg text,
+  #write svg tspan,
+  #write [lang="mermaid"] .label {
+    color: #111 !important;
+    fill: #111 !important;
+    stroke: none !important;
+  }
+
   a {
-    color: #111;
+    color: #111 !important;
     text-decoration-color: #777;
   }
 }
