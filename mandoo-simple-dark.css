@@ -6,6 +6,8 @@
 /*!
 Mandoo Simple
 Quiet warm-gray Typora theme, dark variant.
+Copyright (c) 2026 kimmandoo
+Released under the MIT License.
  */
 
 :root {
@@ -33,8 +35,8 @@ Quiet warm-gray Typora theme, dark variant.
   --item-hover-bg-color: var(--sidebar-hover);
   --control-text-color: var(--muted);
   --side-bar-bg-color: var(--sidebar-bg);
-  --font-ui: "Segoe UI", Helvetica, "Apple Color Emoji", Arial, "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  --font-code: "Fira Code", "FiraCode", "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  --font-ui: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Noto Sans CJK KR", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --font-code: "Fira Code", "FiraCode", "Cascadia Code", "D2Coding", "Nanum Gothic Coding", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Monaco, "Courier New", monospace;
 }
 
 html {
